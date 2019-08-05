@@ -1,8 +1,8 @@
 <template lang="pug">
 div(style="text-align: center;")
   h2 Type some animal name to search
-
-  v-autocomplete(:items="items" v-model='item', :get-label='getLabel', :min-len='0' @update-items='update', :component-item='tpl', @item-selected="itemSelected", @item-clicked="itemClicked", :input-attrs="{name: 'input-test', id: 'v-my-autocomplete'}")
+  button(@click='reset') reset
+  v-autocomplete(ref="foobar", :items="items" v-model='item', :get-label='getLabel', :min-len='0' @update-items='update', :component-item='tpl', @item-selected="itemSelected", @item-clicked="itemClicked", :input-attrs="{name: 'input-test', id: 'v-my-autocomplete'}")
   p Selected item:
   pre {{ item }}
 
@@ -48,6 +48,9 @@ export default {
       this.items = Animals.filter((item) => {
         return (new RegExp(text.toLowerCase())).test(item.name.toLowerCase())
       })
+    },
+    reset() {
+      this.$refs.foobar.clearInput()
     }
   }
 }
