@@ -10,12 +10,6 @@ v-autocomplete
 Installation
 ------------
 
-### Using yarn
-
-`yarn add v-autocomplete`
-
-### Using npm
-
 `npm i --save v-autocomplete`
 
 Demo
