@@ -1,6 +1,5 @@
 export default {
   minLen: 3,
-  wait: 500,
   timeout: null,
 
   isUpdateItems (text) {
@@ -9,10 +8,14 @@ export default {
     }
   },
 
-  callUpdateItems (text, cb) {
+  callUpdateItems (text, cb, wait) {
     clearTimeout(this.timeout)
     if (this.isUpdateItems(text)) {
-      this.timeout = setTimeout(cb, this.wait)
+      if (wait) {
+        this.timeout = setTimeout(cb, wait)
+      } else {
+        cb()
+      }
     }
   },
 

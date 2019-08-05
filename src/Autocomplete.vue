@@ -35,6 +35,7 @@ export default {
     },
     items: Array,
     autoSelectOneItem: { type: Boolean, default: true },
+    listCloseDelay: { type: Number, default: 500 },
     placeholder: String,
     inputClass: {type: String, default: 'v-autocomplete-input'},
     disabled: {type: Boolean, default: false},
@@ -61,8 +62,8 @@ export default {
     inputChange () {
       this.showList = true
       this.cursor = -1
-      this.onSelectItem(null, 'inputChange')
-      utils.callUpdateItems(this.searchText, this.updateItems)
+      this.onSelectItem(null)
+      utils.callUpdateItems(this.searchText, this.updateItems, this.listCloseDelay)
       this.$emit('change', this.searchText)
     },
 
