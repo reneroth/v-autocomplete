@@ -9,9 +9,9 @@
   "scripts": {
     "dist": "poi build ./src/v-autocomplete.js --format umd --module-name VAutocomplete --filename.js v-autocomplete.js --filename.css v-autocomplete.css --no-sourceMap --no-html",
     "dist:demo": "poi build ./demo/index.js --config ./demo/build.config.js --filename.css v-autocomplete.css --no-sourceMap --dist ./docs",
-    "start": "yarn dev",
+    "start": "npm run dev",
     "dev": "poi build ./demo/index.js --config ./demo/build.config.js --filename.css paliari-vue.css --no-sourceMap --no-minimize --dist ./docs",
-    "release": "rm -rf dist && yarn dist",
+    "release": "rm -rf dist && npm run dist",
     "demo:open": "open 'http://localhost:5000/'; serve ./docs/"
   },
   "files": [
@@ -25,10 +25,10 @@
     "v-autocomplete"
   ],
   "devDependencies": {
-    "poi": "^9.4.3",
-    "pug": "^2.0.0-rc.4",
-    "serve": "^7.0.0",
+    "poi": "9.6.13",
+    "pug": "^2.0.4",
+    "serve": "^11.1.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "stylus-loader": "^3.0.2"
   }
 }
